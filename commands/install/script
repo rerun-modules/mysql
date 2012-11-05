@@ -32,7 +32,7 @@ set -e -o pipefail
 sudo yum -y install mysql mysql-server
 
 # Make sure that the MySQL server will start on system boot:
-sudo chkconfig mysqld on
+sudo /sbin/chkconfig mysqld on
 
 exit $?
 

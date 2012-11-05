@@ -19,7 +19,7 @@ rerun() {
 describe "start"
 
 it_runs_without_arguments() {
-    if chkconfig mysqld
+    if /sbin/chkconfig mysqld
     then
       rerun mysql:stop
       rerun mysql:start

@@ -19,7 +19,7 @@ rerun() {
 describe "status"
 
 it_works_whether_mysql_is_up_or_down() {
-    if chkconfig mysqld
+    if /bin/chkconfig mysqld
     then
       rerun mysql:start
       rerun mysql:status
