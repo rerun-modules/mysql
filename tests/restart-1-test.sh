@@ -18,10 +18,19 @@ rerun() {
 
 describe "restart"
 
-it_runs_without_arguments() {
+it_restarts_when_mysqld_is_running() {
     if /sbin/chkconfig mysqld
     then
+      rerun mysql:start
       rerun mysql:restart
       rerun mysql:stop
+    fi
+}
+
+it_restarts_when_mysqld_is_stopped() {
+    if /sbin/chkconfig mysqld
+    then
+      rerun mysql:stop
+      rerun mysql:restart
     fi
 }

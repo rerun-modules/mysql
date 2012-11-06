@@ -28,7 +28,10 @@ set -e -o pipefail
 # Your implementation goes here.
 # ------------------------------
 
-sudo /sbin/service mysqld stop
+if rerun mysql:status
+then
+  sudo /sbin/service mysqld stop
+fi
 
 exit $?
 
