@@ -28,7 +28,7 @@ set -e -o pipefail
 # Your implementation goes here.
 # ------------------------------
 
-sudo service mysqld restart
+sudo /sbin/service mysqld restart
 
 exit $?
 
