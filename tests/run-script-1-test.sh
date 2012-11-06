@@ -6,13 +6,6 @@
 #     rerun stubbs:test -m mysql -p run-script
 #
 
-# Helpers
-# ------------
-
-rerun() {
-    command $RERUN -M $RERUN_MODULES "$@"
-}
-
 # The Plan
 # --------
 
@@ -28,7 +21,7 @@ it_fails_without_arguments() {
 it_connects_without_password_and_selects_user() {
     rerun mysql:start
 
-    SCRIPT=$(mktemp --suffix .sql)
+    SCRIPT=$(mktemp)
     echo "select user();" > $SCRIPT
 
     rerun mysql:run-script -s $SCRIPT
