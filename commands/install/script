@@ -29,7 +29,7 @@ set -e -o pipefail
 # ------------------------------
 
 # Install the MySQL client and server packages:
-sudo yum -y install mysql mysql-server
+sudo yum --quiet -y install mysql mysql-server
 
 # Make sure that the MySQL server will start on system boot:
 sudo /sbin/chkconfig mysqld on
