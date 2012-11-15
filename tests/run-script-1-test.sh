@@ -19,6 +19,7 @@ it_fails_without_arguments() {
 }
 
 it_connects_without_password_and_selects_user() {
+    rerun mysql:install
     rerun mysql:start
 
     SCRIPT=$(mktemp)
@@ -29,4 +30,5 @@ it_connects_without_password_and_selects_user() {
     rm -f $SCRIPT
 
     rerun mysql:stop
+    rerun mysql:remove
 }
