@@ -32,7 +32,7 @@ set -o nounset -o pipefail
 # ------------------------------
 
 # Remove the MySQL server package and its dependencies from the system:
-sudo yum --quiet -y remove mysql-server
+rerun rpm:erase  --package-name mysql-server
 
 exit $?
 
