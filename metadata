@@ -3,6 +3,6 @@
 NAME=mysql
 DESCRIPTION="Rerun module to manage working with the MySQL database server"
 INTERPRETER="bash"
-VERSION=
+VERSION=1.0
 REQUIRES=
 
